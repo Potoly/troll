@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>HACKADO HAHA</title>
+  <style>
+    body {
+      background-color: black;
+      color: limegreen;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 4em;
+      animation: piscar 1s infinite;
+    }
+
+    #contador {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      font-size: 1.2em;
+    }
+
+    @keyframes piscar {
+      0% { opacity: 1; }
+      50% { opacity: 0.2; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <h1>HACKADO HAHA</h1>
+  <div id="contador">Acessos: carregando...</div>
+
+  <script>
+    const contadorUrl = "https://api.countapi.xyz/hit/mentoraValorant/hackcounter";
+
+    fetch(contadorUrl)
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("contador").innerText = "Acessos: " + data.value;
+      })
+      .catch(() => {
+        document.getElementById("contador").innerText = "Acessos: erro";
+      });
+  </script>
+</body>
+</html>
