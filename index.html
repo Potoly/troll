@@ -1,63 +1,129 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Mentora Valorant | Acesso Restrito</title>
-
-  <!-- Camufla preview em WhatsApp e redes -->
-  <meta property="og:title" content="Mentora Valorant | Acesso Restrito">
-  <meta property="og:description" content="Sistema privado de análise de desempenho.">
-  <meta property="og:image" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="UTF-8">
+  <title>Access</title>
   <style>
     body {
       background-color: black;
-      color: limegreen;
-      font-family: monospace;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      flex-direction: column;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      font-size: 20px;
+      padding: 20px;
+      text-align: left;
     }
-
-    h1 {
-      font-size: 4em;
-      animation: piscar 1s infinite;
+    #tela {
+      white-space: pre-wrap;
     }
-
     #contador {
-      position: fixed;
-      bottom: 10px;
-      left: 10px;
-      font-size: 1.2em;
+      display: inline-block;
     }
-
-    @keyframes piscar {
-      0% { opacity: 1; }
-      50% { opacity: 0.2; }
-      100% { opacity: 1; }
+    #trollface {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+    }
+    #trollface img {
+      max-width: 300px;
+      filter: invert(100%);
     }
   </style>
 </head>
 <body>
-  <h1>HACKEADO HAHA</h1>
-  <div id="contador">Acessos: carregando...</div>
+  <div id="tela"></div>
+  <div id="trollface">
+    <img src="https://bluemoji.io/cdn-proxy/646218c67da47160c64a84d5/646342b6cf0d1f7c502cdc15_30.png">
+  </div>
 
   <script>
-    const key = "mentorateam-accessos";
-    const url = https://api.noluye.com/count/${key}/hit;
+    const tela = document.getElementById("tela");
+    const trollDiv = document.getElementById("trollface");
 
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById("contador").innerText = "Acessos: " + data.value;
-      })
-      .catch(() => {
-        document.getElementById("contador").innerText = "Acessos: erro";
+    function escrever(texto, delay = 500) {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          const linha = document.createElement("div");
+          linha.textContent = texto;
+          tela.appendChild(linha);
+          window.scrollTo(0, document.body.scrollHeight);
+          resolve();
+        }, delay);
       });
+    }
+
+    async function iniciar() {
+      await escrever(">>Token desencriptado", 300);
+      await escrever("acesso ao system32 garantido", 500);
+
+      const codigos = [
+        "[KEY] XMYK-0RVY-B7F6-ISVU", "[KEY] LKG8-X5G5-WKXV-CIW8", "[KEY] FK7-HH6S-CJFH5-5GXB", "[KEY] NWUO-7X0K-7040-3ML3", "[KEY] K5GRX-8N0Z-0QBP-QR56", "[TOKEN] 7HGVK-GOTE-9CJS-4ZJT",
+        "[KEY] H9KG-KJ7F-D8U5-PWRQ", "[KEY] R8XT-MWZ3-KK2D-FQYU", "[KEY] W3HV-YT68-LQX9-BBTK", "[KEY] P9VK-XR9M-TU43-VNJD", "[KEY] ZKW8-33VQ-KL9E-JRHY",
+        "[PASSWORD ENCRYPTED] AJQP-9284-HSKD-AL39", "[KEY] LK92-WK4R-FJZ9-QWE4", "[KEY] MXYK-JG74-HRT5-TRDF", "[KEY] NAKT-56KU-POI7-ASDQ", "[KEY] QWE-9283-KSKS-WIER",
+        "[KEY] ZXCV-76DF-UIOP-LL23", "[KEY] BNME-23KO-IJUI-KQWE", "[KEY] XCVW-PQOW-MNAK-VTYR", "[KEY] IUYT-QWER-ASDF-ZXCV", "[KEY] GHJK-MNBV-CXZA-PLMN",
+        "[KEY] WERT-KLOP-MBVC-QWIE", "[KEY] YUIO-TRRE-ZXCE-HGFD", "[KEY] XMYK-0RVY-B7F6-ISVU", "[KEY] LKG8-X5G5-WKXV-CIW8", "[KEY] FK7-HH6S-CJFH5-5GXB",
+        "[null]NWUO-7X0K-7040-3ML3", "[KEY] K5GRX-8N0Z-0QBP-QR56", "[KEY] 7HGVK-GOTE-9CJS-4ZJT", "[KEY] XMYK-0RVY-B7F6-ISVU", "[KEY] LKG8-X5G5-WKXV-CIW8",
+        "[KEY] FK7-HH6S-CJFH5-5GXB", "[KEY] NWUO-7X0K-7040-3ML3", "[KEY] 88GRX-8L0Z-0QLP-QLL6", "[LOGIN] 722VK-GOTE-9CJS-4ZJT",
+      ];
+
+      for (let i = 0; i < codigos.length; i++) {
+        await escrever(codigos[i], 10);
+      }
+
+      await escrever("Attempting to Bypass vanguard...", 600);
+      await escrever("Attempting to Bypass vanguard...", 600);
+      await escrever("Bypassing vanguard...", 800);
+      await escrever("IP local identificado: 192.168.0.103", 300);
+      await escrever("Rastreamento externo: 187.59.212.88", 300);
+      await escrever("Porta 443 aberta | SSL handshake detectado", 300);
+      await escrever("Estabelecendo conexão reversa com servidor", 300);
+      await escrever("Pacotes criptografados: 125.602 enviados | 512.913 recebidos", 300);
+      for (let i = 0; i < 8; i++) {
+        await escrever("Localização estimada: Pederneiras, São Paulo - Brasil", 50);
+      }
+      await escrever("Host vulnerável encontrado: win32api-core.node", 100);
+      await escrever("Extraindo credenciais de RAM...", 100);
+      await escrever("Carregando brute-force dictionary [4.2GB]...", 700);
+      await escrever("Carregando brute-force dictionary [9.2GB]...", 2000);
+
+      // Limpa a tela antes da parte final
+      tela.innerHTML = "";
+
+      await escrever("TENTANDO SENHAS:", 500);
+
+      const contadorDiv = document.createElement("div");
+      contadorDiv.id = "contador";
+      tela.appendChild(contadorDiv);
+
+      let contador = 0;
+      const limite = 3183941;
+
+      const intervalo = setInterval(() => {
+        contador += Math.floor(Math.random() * 8000) + 20000;
+        if (contador >= limite) {
+          contador = limite;
+          clearInterval(intervalo);
+          setTimeout(async () => {
+            tela.innerHTML = "";
+            await escrever(">>>Account encrypted found 😁", 1000);
+
+            const destaque = document.createElement("div");
+            destaque.style.fontSize = "150%";
+            destaque.innerText = "nick: mcc ruivo #LGBT\nLogin: alivecrossss; Lu140809@\nNUNCA CLIQUE EM LINKS DE ESTRANHOS 🤣🤣\nPERDEU A CONTA";
+            tela.appendChild(destaque);
+
+            trollDiv.style.display = "block";
+
+            setTimeout(() => {
+              window.open('', '_self', '');
+              window.close();
+            }, 6000);
+          }, 500);
+        }
+        contadorDiv.textContent = contador.toString();
+      }, 15);
+    }
+
+    iniciar();
   </script>
 </body>
 </html>
