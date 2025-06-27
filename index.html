@@ -2,7 +2,14 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title></title>
+  <title>Mentora Valorant | Acesso Restrito</title>
+
+  <!-- Camufla preview em WhatsApp e redes -->
+  <meta property="og:title" content="Mentora Valorant | Acesso Restrito">
+  <meta property="og:description" content="Sistema privado de análise de desempenho.">
+  <meta property="og:image" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       background-color: black;
@@ -36,13 +43,14 @@
   </style>
 </head>
 <body>
-  <h1>HACKEADO HAHAHA</h1>
+  <h1>HACKEADO HAHA</h1>
   <div id="contador">Acessos: carregando...</div>
 
   <script>
-    const contadorUrl = "https://api.countapi.xyz/hit/mentoraValorant/hackcounter";
+    const key = "mentorateam-accessos";
+    const url = https://api.noluye.com/count/${key}/hit;
 
-    fetch(contadorUrl)
+    fetch(url)
       .then(res => res.json())
       .then(data => {
         document.getElementById("contador").innerText = "Acessos: " + data.value;
